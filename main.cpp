@@ -4,7 +4,7 @@
 #include <string>
 
 
-const int length{300};  
+const int MaxLength{300};  
 
 double countCoefficient(char*); //  считаем коэфф. гласн./согл.
 void inputString(char*);
@@ -13,7 +13,7 @@ void addWord(char*&, const char*);  // добавляем слово к стро
 
 int main() {
     
-    char* string = new char[length];
+    char* string = new char[MaxLength];
     inputString(string);
     
     std::regex word_regex(R"([a-zA-Z]+)");
@@ -57,7 +57,7 @@ int main() {
 void inputString(char* string) {
     std::cout << "Enter a string whose length does not exceed 300 characters" << '\n';
     std::cout << "->";
-    std::cin.getline(string, length);
+    std::cin.getline(string, MaxLength);
 }
 
 double countCoefficient(char* word) {
